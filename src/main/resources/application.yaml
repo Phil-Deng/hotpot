@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:h2:file:./data/hotpot;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      # Adds new entity columns to an existing MySQL table without dropping data.
+      ddl-auto: update
+    defer-datasource-initialization: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  ai:
+    # Keep the application usable without an API key. Set SPRING_AI_CHAT_MODEL=openai
+    # and SUPPLIER_AI_ENABLED=true to enable the Spring AI/OpenAI response layer.
+    model:
+      chat: ${SPRING_AI_CHAT_MODEL:none}
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      chat:
+        options:
+          model: ${OPENAI_MODEL:gpt-4.1-mini}
+
+app:
+  ai:
+    enabled: ${SUPPLIER_AI_ENABLED:false}
