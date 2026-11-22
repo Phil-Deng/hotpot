@@ -7,12 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20">
+  <link rel="stylesheet" href="styles.css?v=29-hotpot">
 </head>
 <body>
   <section class="login-screen" id="login-screen" aria-labelledby="login-title">
     <div class="login-card">
       <div class="login-brand"><span class="brand-mark">火</span><span>台灣南波萬<br>火鍋店採購系統</span></div>
+      <img class="login-hotpot" src="images/hotpot-illustration.png" alt="" width="640" height="427" decoding="async">
       <div class="login-copy"><p class="eyebrow">STAFF PORTAL</p><h1 id="login-title">員工登入</h1><p>請使用您的員工帳號登入採購系統。</p></div>
       <form id="login-form" novalidate>
         <label>員工帳號<input id="login-account" name="account" autocomplete="username" placeholder="請輸入員工編號" required></label>
@@ -20,13 +21,13 @@
         <p class="login-error" id="login-error" role="alert"></p>
         <button class="primary-button login-submit" type="submit">登入系統 <span>→</span></button>
       </form>
-      <div class="demo-account">測試帳號：<strong>001</strong><span>／</span>密碼：<strong>123456</strong></div>
+      <div class="demo-account">測試帳號：<strong>001</strong><span>／</span>密碼：<strong>1212</strong></div>
     </div>
   </section>
   <div class="app-shell" id="app-shell" hidden>
     <aside class="sidebar">
       <button class="brand" data-page="purchase"><span class="brand-mark">火</span><span>台灣南波萬<br>火鍋店採購系統</span></button>
-      <label class="store-switcher" for="store-select"><span class="store-dot"></span><select id="store-select" aria-label="選擇門市"><option value="">請選擇</option><option value="信義旗艦店">信義旗艦店</option></select><span class="chevron">⌄</span></label>
+      <div class="store-switcher" id="store-switcher" role="button" tabindex="0" aria-label="選擇門市"><span class="store-dot"></span><select id="store-select" aria-label="選擇門市"><option value="">請選擇</option><option value="信義旗艦店">信義旗艦店</option></select><span class="chevron" aria-hidden="true">⌄</span></div>
       <nav>
         <a href="#purchase" class="nav-item" data-page="purchase"><span>🛒</span>採購下單</a>
         <a href="#orders" class="nav-item" data-page="orders"><span>▦</span>下單紀錄</a>
@@ -41,13 +42,13 @@
       </div>
     </aside>
     <main>
-      <header class="topbar"><button class="mobile-menu" type="button">☰</button><div class="breadcrumbs">採購管理 <span>/</span> <strong id="crumb">採購下單</strong></div><div class="header-actions"><button class="icon-button" type="button">♧<b></b></button><button class="employee-menu" id="employee-menu" type="button" aria-label="員工帳號選單"><div class="header-avatar">王</div><span><strong>王小明</strong><small>001</small></span><i>⌄</i></button></div></header>
+      <header class="topbar"><button class="mobile-menu" type="button">☰</button><div class="breadcrumbs">採購管理 <span>/</span> <strong id="crumb">採購下單</strong></div><div class="header-actions"><button class="icon-button cart-button" id="cart-button" type="button" aria-label="查看本次採購單">🛒<span class="cart-count" aria-hidden="true" hidden>0</span></button><button class="employee-menu" id="employee-menu" type="button" aria-label="員工帳號選單"><div class="header-avatar">王</div><span><strong>王小明</strong><small>001</small></span><i>⌄</i></button></div></header>
       <section class="content" id="app"></section>
     </main>
   </div>
   <div class="modal-backdrop" id="modal" hidden></div>
   <button class="mobile-ai-help" id="mobile-supplier-help" type="button" aria-label="開啟叫貨與到貨採購助理">✦ 採購助理</button>
   <div class="toast" id="toast"></div>
-  <script src="app.js?v=20"></script>
+  <script src="app.js?v=32-hotpot"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 @RequestMapping("/api/shared-state")
 public class SharedStateController {
 
-    private static final Set<String> ALLOWED_KEYS = Set.of("orders", "stocktakes");
+    private static final Set<String> ALLOWED_KEYS = Set.of("orders", "stocktakes", "orders-xinyi", "orders-daan", "stocktakes-xinyi", "stocktakes-daan");
 
     private final SharedStateService sharedStateService;
 

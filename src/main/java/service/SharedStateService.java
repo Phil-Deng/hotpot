@@ -13,9 +13,13 @@ public class SharedStateService {
     }
 
     public String get(String key) {
-        return repository.findById(key)
-                .map(SharedState::getPayload)
-                .orElse(null);
+        String payload = repository.findById(key).map(SharedState::getPayload).orElse(null);
+        // Existing shared records belong to the original Xinyi store. Keep them intact.
+        if (payload == null && (key.equals("orders-xinyi") || key.equals("stocktakes-xinyi"))) {
+            return repository.findById(key.substring(0, key.lastIndexOf('-')))
+                    .map(SharedState::getPayload).orElse(null);
+        }
+        return payload;
     }
 
     public void save(String key, String payload) {

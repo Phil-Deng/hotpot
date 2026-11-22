@@ -5,6 +5,7 @@ import com.example.demo.model.Supplier;
 import com.example.demo.repository.ProductRepository;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Comparator;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
 public class SupplierAssistantService {
 
     private static final Locale TAIWAN = Locale.TAIWAN;
+    private static final ZoneId TAIPEI_ZONE = ZoneId.of("Asia/Taipei");
     private static final DateTimeFormatter DATE_TIME = DateTimeFormatter.ofPattern("yyyy/MM/dd（EEEE）HH:mm", TAIWAN);
 
     private final ProductRepository productRepository;
@@ -37,7 +39,7 @@ public class SupplierAssistantService {
     }
 
     public AssistantReply answer(String question) {
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now(TAIPEI_ZONE);
         Optional<Product> product = productRepository.findAll().stream()
                 .map(item -> new ScoredProduct(item, longestCommonSubstring(item.getName(), question)))
                 .filter(item -> item.score() >= 2)

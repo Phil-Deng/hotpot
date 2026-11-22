@@ -1,6 +1,11 @@
 spring:
   application:
     name: demo
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          no-store: true
   datasource:
     url: jdbc:h2:file:./data/hotpot;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver

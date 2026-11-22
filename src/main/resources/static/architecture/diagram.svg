@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1220" viewBox="0 0 1200 1220" role="img" aria-labelledby="title desc">
+<title id="title">火鍋店採購系統架構圖</title>
+<desc id="desc">瀏覽器經 REST API 連接 Spring Boot，透過 Spring Data JPA 存取 H2 或 MySQL。採購助理可選用 Spring AI 與 OpenAI。Redis 和 Elasticsearch 已配置。</desc>
+<defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#dedbc9"/></pattern><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#555747"/></marker></defs>
+<rect width="1200" height="1220" fill="#f9f7ed"/><rect width="1200" height="1220" fill="url(#dots)"/>
+<g font-family="Inter, PingFang TC, Microsoft JhengHei, sans-serif">
+
+<text x="48" y="54" fill="#655c3a" font-size="18" font-weight="700">台灣南波萬  /  技術架構</text>
+<text x="48" y="103" fill="#25291c" font-size="42" font-weight="800">火鍋店採購系統</text>
+<text x="48" y="137" fill="#333728" font-size="19" font-weight="500">從門市瀏覽器到後端資料庫與採購助理</text>
+<path d="M342 271H450" stroke="#555747" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M750 271H858" stroke="#555747" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M600 381V464" stroke="#555747" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+<path d="M1008 381V464" stroke="#555747" stroke-width="2" fill="none" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="354" y="254" fill="#333728" font-size="16" font-weight="500">REST API</text>
+<text x="763" y="254" fill="#333728" font-size="16" font-weight="500">問答請求</text>
+<text x="619" y="428" fill="#333728" font-size="16" font-weight="500">Spring Data JPA</text>
+<text x="1027" y="428" fill="#333728" font-size="16" font-weight="500">選用</text>
+<rect x="42" y="173" width="300" height="208" rx="16" fill="#fffdf5" stroke="#dad7c4"/>
+<text x="64" y="203" fill="#655c3a" font-size="15" font-weight="700">前端</text>
+<text x="64" y="238" fill="#242719" font-size="27" font-weight="700">門市瀏覽器</text>
+<text x="64" y="269" fill="#414535" font-size="17" font-weight="500">HTML · CSS · JavaScript</text>
+<text x="64" y="294" fill="#414535" font-size="17" font-weight="500">Fetch API · localStorage</text>
+<text x="64" y="319" fill="#414535" font-size="17" font-weight="500">採購、驗收、盤點與報表</text>
+<rect x="450" y="173" width="300" height="208" rx="16" fill="#292e20" stroke="#dad7c4"/>
+<text x="472" y="203" fill="#f0d46a" font-size="15" font-weight="700">後端</text>
+<text x="472" y="238" fill="#fffbee" font-size="27" font-weight="700">Spring Boot</text>
+<text x="472" y="269" fill="#e8e5d5" font-size="17" font-weight="500">Java 21 · Spring Web MVC</text>
+<text x="472" y="294" fill="#e8e5d5" font-size="17" font-weight="500">食材、供應商與共用狀態 API</text>
+<text x="472" y="319" fill="#e8e5d5" font-size="17" font-weight="500">由 Spring Boot 提供靜態網頁</text>
+<rect x="858" y="173" width="300" height="208" rx="16" fill="#fffdf5" stroke="#dad7c4"/>
+<text x="880" y="203" fill="#655c3a" font-size="15" font-weight="700">商業邏輯</text>
+<text x="880" y="238" fill="#242719" font-size="27" font-weight="700">採購助理</text>
+<text x="880" y="269" fill="#414535" font-size="17" font-weight="500">比對品項與供應商</text>
+<text x="880" y="294" fill="#414535" font-size="17" font-weight="500">依叫貨截止和休息日估算到貨</text>
+<text x="880" y="319" fill="#414535" font-size="17" font-weight="500">以規則計算產生答覆</text>
+<rect x="450" y="465" width="300" height="150" rx="16" fill="#fffdf5" stroke="#dad7c4"/>
+<text x="472" y="495" fill="#655c3a" font-size="15" font-weight="700">資料層</text>
+<text x="472" y="530" fill="#242719" font-size="27" font-weight="700">H2 / MySQL</text>
+<text x="472" y="561" fill="#414535" font-size="17" font-weight="500">本機 H2 · 容器環境 MySQL</text>
+<text x="472" y="586" fill="#414535" font-size="17" font-weight="500">食材、供應商與共用狀態</text>
+<rect x="858" y="465" width="300" height="168" rx="16" fill="#f5e6a5" stroke="#dad7c4"/>
+<text x="880" y="495" fill="#655c3a" font-size="15" font-weight="700">模型整合</text>
+<text x="880" y="530" fill="#242719" font-size="27" font-weight="700">Spring AI / OpenAI</text>
+<text x="880" y="561" fill="#414535" font-size="17" font-weight="500">選用模型整理規則查詢結果</text>
+<text x="880" y="586" fill="#414535" font-size="17" font-weight="500">模型未啟用或呼叫失敗時</text>
+<text x="880" y="611" fill="#414535" font-size="17" font-weight="500">回傳規則結果</text>
+<rect x="42" y="667" width="1116" height="116" rx="16" fill="#fffdf5" stroke="#dad7c4"/>
+<text x="64" y="697" fill="#655c3a" font-size="15" font-weight="700">部署與已配置服務</text>
+<text x="64" y="732" fill="#242719" font-size="27" font-weight="700">Docker Compose · MySQL · Redis · Elasticsearch</text>
+<text x="64" y="763" fill="#414535" font-size="17" font-weight="500">Redis、Elasticsearch 已配置依賴與容器，現有採購流程尚未接入快取或全文搜尋。</text>
+<rect x="42" y="815" width="1116" height="101" rx="12" fill="#e9ecd9" stroke="#dad7c4"/>
+<text x="64" y="843" fill="#333728" font-size="19" font-weight="750">採購與驗收</text>
+<text x="64" y="870" fill="#333728" font-size="17" font-weight="600">建立待驗收訂單 → localStorage → PUT /api/shared-state/orders → JPA → shared_state</text>
+<text x="64" y="896" fill="#333728" font-size="16" font-weight="500">驗收填入實收數量，更新同一份訂單狀態。stocktakes 另存每月盤點資料。</text>
+<rect x="42" y="929" width="1116" height="101" rx="12" fill="#f5e6a5" stroke="#dad7c4"/>
+<text x="64" y="957" fill="#333728" font-size="19" font-weight="750">採購助理</text>
+<text x="64" y="984" fill="#333728" font-size="17" font-weight="600">POST /api/supplier-assistant → 比對食材或供應商 → 套用截止時間與休息日 → 回傳到貨日期</text>
+<text x="64" y="1010" fill="#333728" font-size="16" font-weight="500">Spring AI ChatClient 可選用 OpenAI 整理文字。模型預設關閉，日期由 Java 規則計算。</text>
+<rect x="42" y="1043" width="1116" height="101" rx="12" fill="#fffdf5" stroke="#dad7c4"/>
+<text x="64" y="1071" fill="#333728" font-size="19" font-weight="750">REST API 與資料表</text>
+<text x="64" y="1098" fill="#333728" font-size="17" font-weight="600">/api/ingredients → ingredient　 ·　 /api/suppliers → supplier</text>
+<text x="64" y="1124" fill="#333728" font-size="16" font-weight="500">/api/shared-state/{key} → shared_state，以鍵值保存訂單與盤點 JSON。</text>
+<text x="48" y="1190" fill="#655c3a" font-size="15" font-weight="600">實線  資料或請求路徑     /     虛線  選用模型整合</text>
+</g></svg>

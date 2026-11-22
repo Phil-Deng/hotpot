@@ -21,7 +21,7 @@ public class SharedState {
     private String stateKey;
 
     @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String payload;
 
     public SharedState(String stateKey, String payload) {
